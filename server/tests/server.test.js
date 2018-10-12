@@ -7,7 +7,7 @@ const {Todo} = require('./../models/todo');
 // the count will not be 0 it will start from one.
 // This will allow database to be empty by deleting everything
 beforeEach((done) => {
-  Todo.remove({}).then(() => done());
+  Todo.deleteMany({}).then(() => done());
 });
 
 describe('POST /todos', () => {

@@ -1,5 +1,5 @@
 var express = require('express');
-var bodyparser = require('body-parser');
+var bodyParser = require('body-parser');
 
 
 var {mongoose} = require('./db/mongoose.js');
@@ -9,7 +9,7 @@ var {User} = require('./models/user.js');
 
 var app = express();
 
-app.use(bodyparser.json()); // middlewear, send json to express app
+app.use(bodyParser.json()); // middlewear, send json to express app
 
 app.post('/todos', (req, res) => {
   var todo = new Todo({
@@ -22,7 +22,13 @@ app.post('/todos', (req, res) => {
   });
 });
 
-
+app.get('/todos', (req, res) => {
+  Todo.find().then((todos) => {
+    res.send({todos}) //create object to allow me to add properties later on
+  }, (e) => {
+      res.status(400).send(e);
+  })
+})
 
 
 app.listen(3000, () =>{
