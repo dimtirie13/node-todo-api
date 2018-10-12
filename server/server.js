@@ -27,8 +27,8 @@ app.get('/todos', (req, res) => {
     res.send({todos}) //create object to allow me to add properties later on
   }, (e) => {
       res.status(400).send(e);
-  })
-})
+  });
+});
 
 
 app.listen(3000, () =>{
