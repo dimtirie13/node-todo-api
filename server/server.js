@@ -1,3 +1,4 @@
+require('./config/config.js');
 const _ = require('lodash');
 const express = require('express');
 const bodyParser = require('body-parser');
@@ -21,7 +22,7 @@ app.post('/todos', (req, res) => {
   todo.save().then((doc) => {
     res.send(doc);
   }, (e) => {
-    res.status(400).send(e); // send error to user
+    res.status(400).send(e);
   });
 });
 
