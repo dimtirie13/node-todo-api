@@ -28,11 +28,11 @@ const {User} = require('./../server/models/user');
 //   console.log('Todo By id', todo);
 // }).catch((e) => console.log(e));
 
-var userId = '5bbe96f71abd714c5467cec5';
-
-User.findById(userId).then((user) => {
-  if (!user) {
-    return console.log('User not Found...');
-  }
-  console.log(JSON.stringify(user, undefined, 2));
-}).catch((e) => console.log(e));
+// var userId = '5bbe96f71abd714c5467cec5';
+//
+// User.findById(userId).then((user) => {
+//   if (!user) {
+//     return console.log('User not Found...');
+//   }
+//   console.log(JSON.stringify(user, undefined, 2));
+// }).catch((e) => console.log(e));
