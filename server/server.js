@@ -33,7 +33,7 @@ app.get('/todos', (req, res) => {
   });
 });
 
-// GET /todos/id
+
 app.get('/todos/:id', (req, res) => {
   var id = req.params.id;
 
@@ -47,6 +47,8 @@ app.get('/todos/:id', (req, res) => {
        res.send({todo});
       }).catch(() => res.status(404).send());
 });
+
+
 app.delete('/todos/:id', (req, res) => {
   var id = req.params.id;
 
@@ -60,6 +62,7 @@ app.delete('/todos/:id', (req, res) => {
     res.send({todo});
 }).catch((e) => res.status(400).send());
 });
+
 
 app.patch('/todos/:id', (req, res) => {
  var id = req.params.id;
